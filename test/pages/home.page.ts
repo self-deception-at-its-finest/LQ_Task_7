@@ -9,4 +9,4 @@ class HomePage extends BasePage {
         await super.open(this.endpoint)
     }
 }
-export default HomePage
+export default new HomePage

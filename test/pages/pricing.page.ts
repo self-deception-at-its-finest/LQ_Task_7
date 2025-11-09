@@ -9,4 +9,4 @@ class PricingPage extends BasePage {
         await super.open(this.endpoint)
     }
 }
-export default PricingPage
+export default new PricingPage

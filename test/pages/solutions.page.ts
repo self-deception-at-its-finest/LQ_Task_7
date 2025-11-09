@@ -22,11 +22,17 @@ class SolutionsPage extends BasePage {
      * Function Verifies that each result contains the search text
      */
     async checkSearchResults(message: string): Promise<void>  {
-        await expect(this.searchResults).toBeElementsArrayOfSize({ gte: 1 })
+        await this.filterSearch.setValue(message)
+        await browser.keys('Enter')
 
-        for (const result of this.searchResults) {
-            const text = (await result.getText()).toLowerCase()
-            expect(text).toContain(message.toLowerCase())
+        await browser.pause(5000)
+
+        const results = await this.searchResults
+        expect(results.length).toBeGreaterThan(0)
+
+        for (const result of results) {
+            const text = await result.getText()
+            expect(text.toLowerCase()).toContain(message.toLowerCase())
         }
     }
 
@@ -34,4 +40,4 @@ class SolutionsPage extends BasePage {
         await super.open(this.endpoint)
     }
 }
-export default SolutionsPage
+export default new SolutionsPage

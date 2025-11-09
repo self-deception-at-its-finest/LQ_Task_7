@@ -13,5 +13,10 @@ class CustomerStoriesPage extends BasePage {
     async open() {
         await super.open(this.endpoint)
     }
+    async verifyCustomerStoryLink(customerStoryLink: ChainablePromiseElement, expectedUrlPart: string) {
+        await customerStoryLink.scrollIntoView()
+        await customerStoryLink.click()
+        await expect(browser).toHaveUrl(expect.stringContaining(expectedUrlPart))
+    }
 }
-export default CustomerStoriesPage
+export default new CustomerStoriesPage

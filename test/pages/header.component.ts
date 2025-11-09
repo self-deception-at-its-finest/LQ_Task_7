@@ -14,6 +14,10 @@ class HeaderComponent {
     get whyTelnyxButtonDropdown () {return $('#radix-_R_539eivbH1_')}
     get resourcesButtonDropdown () {return $('#radix-_R_5b9eivbH1_')}
     get developersButtonDropdown () {return $('#radix-_R_5j9eivbH1_')}
-}
 
-export default HeaderComponent
+    async verifyDropdownMenuAppearsOnClick(button: ChainablePromiseElement, menu: ChainablePromiseElement){
+        await button.click()
+        await expect(menu).toBeDisplayed()
+    }
+}
+export default new HeaderComponent

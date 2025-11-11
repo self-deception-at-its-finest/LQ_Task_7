@@ -14,5 +14,6 @@ RUN npm ci
 
 COPY . .
 
+ENV BASE_URL="https://telnyx.com"
 
 CMD ["npm", "run", "test"]

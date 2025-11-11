@@ -18,9 +18,13 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
         run: docker build -t wdio-allure-tests .
 
       - name: Run WDIO tests in Docker
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
         run: docker run --name wdio-runner wdio-allure-tests || true
 
       - name: Copy Allure results

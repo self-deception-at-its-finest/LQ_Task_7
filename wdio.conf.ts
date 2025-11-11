@@ -1,5 +1,5 @@
 import 'dotenv/config'
-
+import allure from '@wdio/allure-reporter'
 
 export const config: WebdriverIO.Config = {
     //
@@ -248,6 +248,13 @@ export const config: WebdriverIO.Config = {
      */
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
+
+    afterTest: async function (test: any, context: any, { error, passed }: any): Promise<void> {
+        if (!passed) {
+            const screenshot: string = await browser.takeScreenshot();
+            await browser.saveScreenshot(`./screenshots/${test.title}-${Date.now()}.png`);
+        }
+    }
 
 
     /**

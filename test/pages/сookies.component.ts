@@ -5,7 +5,8 @@ class CookiesComponent {
 
 
 
-    get cookiesSettingsRoundButton () {return $('.ot-floating-button__open')}
+    get cookiesSettingsRoundButton () {return $('button[class="ot-floating-button__open"]')}
+
     get cookiesSettingsWindow() {return $('#onetrust-pc-sdk')}
     get cookiesWindowDescription() {return $('#ot-pc-desc')}
     get cookiesAllowWindowCloseButton() {return $('button[class^="onetrust-close-btn-handler"]')}

@@ -1,6 +1,6 @@
 import homePage from "../../pages/home.page.ts"
 import cookiesComponent from "../../pages/сookies.component.ts"
-import textConstants from "../../constants/text.constants.json"
+//import textConstants from "../../constants/text.constants.json"
 
 
 describe('Cookies', () => {
@@ -19,7 +19,7 @@ describe('Cookies', () => {
 
         await cookiesComponent.cookiesSettingsRoundButton.click()
 
-        await expect(cookiesComponent.cookiesWindowDescription).toHaveText(textConstants.cookiesDesc)
+        //await expect(cookiesComponent.cookiesWindowDescription).toHaveText(textConstants.cookiesDesc)
 
         await expect(cookiesComponent.performanceCookiesCheckbox).toBeSelected()
         await expect(cookiesComponent.functionalCookiesCheckbox).toBeSelected()

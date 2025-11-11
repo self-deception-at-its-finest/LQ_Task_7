@@ -9,8 +9,9 @@ describe('Main Navigation Menu', () => {
 
         await expect(headerComponent.burgerMenuButton).toBeDisplayed()
         await headerComponent.burgerMenuButton.click()
-
+        await browser.pause(3000)
         await expect(headerComponent.burgerMenu).toBeDisplayed()
+
         await expect(headerComponent.burgerMenuSections).toBeElementsArrayOfSize(6)
     })
 })

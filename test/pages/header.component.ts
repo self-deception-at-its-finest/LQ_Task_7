@@ -1,6 +1,8 @@
 class HeaderComponent {
     get headerLogo () {return $('header a[href="/"]')}
-
+    get burgerMenuButton() {return $('header>div>div>button')}
+    get burgerMenu() {return $('#main-menu')}
+    get burgerMenuSections(){return $$('button[class^="header-md:text-black"]')}
     // main navigation menu sections locators
     get productsButton () {return $('#radix-_R_4b9eivb_')}
     get solutionsButton () {return $('#radix-_R_4j9eivb_')}

@@ -7,6 +7,7 @@ describe('Main Navigation Menu', () => {
         await browser.setWindowSize(375, 667)
         await homePage.open()
 
+        await browser.pause(3000)
         await expect(headerComponent.burgerMenuButton).toBeDisplayed()
         await headerComponent.burgerMenuButton.click()
         await browser.pause(3000)

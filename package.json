@@ -16,7 +16,6 @@
     "test:chrome": "npx wdio run wdio.conf.js --capabilities chrome",
     "test:firefox": "npx wdio run wdio.conf.js --capabilities firefox",
     "test:edge": "npx wdio run wdio.conf.js --capabilities MicrosoftEdge",
-    "test:single": "npx wdio run wdio.conf.js --spec ./test/specs/example.e2e.ts",
     "allure:generate": "npx allure generate allure-results --clean -o allure-report",
     "allure:open": "npx allure open allure-report",
     "report:deploy": "npm run report:generate && gh-pages -d allure-report -b test-results"

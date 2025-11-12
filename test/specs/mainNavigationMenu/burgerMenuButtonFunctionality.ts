@@ -1,5 +1,6 @@
 import headerComponent from "../../pages/header.component.ts"
 import homePage from "../../pages/home.page.ts"
+import cookiesComponent from "../../pages/сookies.component.ts";
 
 
 describe('Main Navigation Menu', () => {
@@ -11,7 +12,7 @@ describe('Main Navigation Menu', () => {
             wait: 10000,
             interval: 1000
         })
-
+        await headerComponent.burgerMenuButton.waitForClickable({ timeout: 10000 })
         await headerComponent.burgerMenuButton.click()
 
         await expect(headerComponent.burgerMenu).toBeDisplayed({

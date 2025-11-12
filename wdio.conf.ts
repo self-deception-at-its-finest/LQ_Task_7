@@ -140,7 +140,7 @@ export const config: WebdriverIO.Config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec',['allure', {
         outputDir: 'allure-results',
-        disableWebdriverStepsReporting: false,
+        disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false}
         ]
     ],
@@ -249,10 +249,9 @@ export const config: WebdriverIO.Config = {
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
 
-    afterTest: async function (test: any, context: any, { error, passed }: any): Promise<void> {
-        if (!passed) {
-            const screenshot: string = await browser.takeScreenshot();
-            await browser.saveScreenshot(`./screenshots/${test.title}-${Date.now()}.png`);
+    afterTest: async function (test: any, context: any, { error, result, duration, passed, retries  }: any): Promise<void> {
+        if (error) {
+            await browser.takeScreenshot()
         }
     }
 

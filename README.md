@@ -1,12 +1,11 @@
 ## Tech stack
 
--   [NodeJS](https://nodejs.org/)
+-   [NodeJS](https://nodejs.org/)(version 20 or later)
 -   [WDIO](https://webdriver.io/docs/gettingstarted)
+  - [Docker](https://www.docker.com/)
 
 ## Install
-
 -   Install [NodeJS](https://nodejs.org/)
-
 -   Install [Git](https://git-scm.com/)
 
 Clone this repo:

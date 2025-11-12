@@ -63,8 +63,19 @@ export const config: WebdriverIO.Config = {
                 '--no-sandbox',
                 '--disable-gpu',
                 '--disable-dev-shm-usage',
-                '--window-size=1920,1080'
+                '--window-size=1920,1080',
+                '--accept-lang=en-US',
+                '--disable-geolocation',
+                '--disable-features=Geolocation',
+                '--use-fake-ui-for-media-stream',
+                '--use-fake-device-for-media-stream',
+
             ],
+            prefs: {
+                'intl.accept_languages': 'en-US,en',
+                'profile.default_content_setting_values.geolocation': 2,
+                'profile.default_content_setting_values.notifications': 2,
+            }
         }
     }],
 

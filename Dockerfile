@@ -9,13 +9,9 @@ RUN npm install -g allure-commandline --save-dev
 
 WORKDIR /usr/src/app
 
-
 COPY package*.json ./
 RUN npm ci
 
 COPY . .
-
-
-ENV BASE_URL="https://telnyx.com"
 
 CMD ["sh", "-c", "rm -rf allure-results allure-report && npm run test"]

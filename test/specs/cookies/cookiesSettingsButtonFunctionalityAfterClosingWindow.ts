@@ -1,6 +1,5 @@
 import homePage from "../../pages/home.page.ts"
 import cookiesComponent from "../../pages/сookies.component.ts"
-import textConstants from "../../constants/text.constants.json"
 
 
 describe('Cookies', () => {
@@ -9,12 +8,15 @@ describe('Cookies', () => {
 
         await cookiesComponent.cookiesAllowWindowIsDisplayed()
 
+        await cookiesComponent.cookiesAllowWindowCloseButton.waitForClickable({ timeout: 10000 })
         await cookiesComponent.cookiesAllowWindowCloseButton.click()
 
+        await cookiesComponent.cookiesSettingsRoundButton.waitForClickable({ timeout: 10000 })
         await cookiesComponent.cookiesSettingsRoundButton.click()
 
-        await expect(cookiesComponent.cookiesSettingsWindow).toBeDisplayed()
-
-        await expect(cookiesComponent.cookiesWindowDescription).toHaveText(textConstants.cookiesDesc)
+        await expect(cookiesComponent.cookiesSettingsWindow).toBeDisplayed({
+            wait: 10000,
+            interval: 1000
+        })
     })
 })

@@ -1,6 +1,5 @@
 import headerComponent from "../../pages/header.component.ts"
 import homePage from "../../pages/home.page.ts"
-import cookiesComponent from "../../pages/сookies.component.ts";
 
 
 describe('Main Navigation Menu', () => {

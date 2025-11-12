@@ -22,7 +22,10 @@ class CookiesComponent {
     get cookiesSettingsSaveButton() {return $('button[class="save-preference-btn-handler onetrust-close-btn-handler"]')}
 
     async cookiesAllowWindowIsDisplayed () {
-        await expect(this.cookiesAllowWindow).toBeDisplayed()
+        await expect(this.cookiesAllowWindow).toBeDisplayed({
+            wait: 10000,
+            interval: 1000
+        })
     }
 
 }

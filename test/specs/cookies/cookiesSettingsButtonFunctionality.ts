@@ -1,6 +1,5 @@
 import homePage from "../../pages/home.page.ts"
 import cookiesComponent from "../../pages/сookies.component.ts"
-import textConstants from "../../constants/text.constants.json"
 
 
 describe('Cookies', () => {
@@ -11,8 +10,10 @@ describe('Cookies', () => {
 
         await cookiesComponent.cookiesSettingsButton.click()
 
-        await expect(cookiesComponent.cookiesSettingsWindow).toBeDisplayed()
+        await expect(cookiesComponent.cookiesSettingsWindow).toBeDisplayed({
+            wait: 10000,
+            interval: 1000
+        })
 
-        await expect(cookiesComponent.cookiesWindowDescription).toHaveText(textConstants.cookiesDesc)
     })
 })

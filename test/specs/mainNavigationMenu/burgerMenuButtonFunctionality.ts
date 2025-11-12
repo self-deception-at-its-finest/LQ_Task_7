@@ -4,14 +4,20 @@ import homePage from "../../pages/home.page.ts"
 
 describe('Main Navigation Menu', () => {
     it('Verify burger button functionality in the main navigation menu', async () => {
-        await browser.setWindowSize(375, 667)
+        await browser.setWindowSize(390, 844)
         await homePage.open()
 
-        await browser.pause(3000)
-        await expect(headerComponent.burgerMenuButton).toBeDisplayed()
+        await expect(headerComponent.burgerMenuButton).toBeDisplayed({
+            wait: 10000,
+            interval: 1000
+        })
+
         await headerComponent.burgerMenuButton.click()
-        await browser.pause(3000)
-        await expect(headerComponent.burgerMenu).toBeDisplayed()
+
+        await expect(headerComponent.burgerMenu).toBeDisplayed({
+            wait: 10000,
+            interval: 1000
+        })
 
         await expect(headerComponent.burgerMenuSections).toBeElementsArrayOfSize(6)
     })
